@@ -19,7 +19,7 @@ function Navigation() {
   );
 }
 
-const Navbar = () => {
+const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -149,4 +149,4 @@ const Navbar = () => {
   );
 }
 
-export default Navbar;
+export default Nav;
