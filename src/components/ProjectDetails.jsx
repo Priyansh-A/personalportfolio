@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { useEffect } from "react";
 
 const ProjectDetails = ({
   title,
@@ -9,20 +10,28 @@ const ProjectDetails = ({
   href,
   closeModal,
 }) => {
+  // Prevent body scrolling when modal is open
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full p-4 overflow-y-auto backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full p-4">
       {/* Backdrop click to close */}
       <div 
-        className="absolute inset-0 bg-black/50"
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={closeModal}
       />
       
       <motion.div
-        className="relative w-full max-w-2xl max-h-[90vh] my-8 overflow-hidden border shadow-sm rounded-2xl bg-linear-to-l from-midnight to-navy border-white/10"
+        className="relative w-full max-w-2xl max-h-[90vh] my-8 overflow-hidden border shadow-sm rounded-2xl bg-linear-to-l from-midnight to-navy border-white/10 flex flex-col"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.5 }}
-        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
@@ -33,18 +42,17 @@ const ProjectDetails = ({
           <img src="assets/close.svg" className="w-5 h-5" alt="Close" />
         </button>
         
-        {/* Scrollable content */}
-        <div className="overflow-y-auto max-h-[90vh]">
-          {/* Image section */}
-          <div className="relative">
-            <img 
-              src={image} 
-              alt={title} 
-              className="w-full h-48 md:h-64 object-cover rounded-t-2xl"
-            />
-          </div>
-          
-          {/* Content section */}
+        {/* Image section - fixed height */}
+        <div className="relative shrink-0">
+          <img 
+            src={image} 
+            alt={title} 
+            className="w-full h-48 md:h-64 object-cover rounded-t-2xl"
+          />
+        </div>
+        
+        {/* Scrollable content section */}
+        <div className="flex-1 overflow-y-auto">
           <div className="p-5 md:p-6">
             <h5 className="mb-3 text-2xl font-bold text-white">{title}</h5>
             

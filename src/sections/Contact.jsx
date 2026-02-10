@@ -51,9 +51,9 @@ const handleChange = (e) => {
     }
   };
   return (
-    <section id="contact" className="relative flex items-center c-space section-spacing">
+    <section id="contact" className="relative flex items-center c-space section-spacing overflow-visible min-h-600px]">
     <Particles
-        className="absolute inset-0 -z-50"
+        className="absolute inset-0 overflow-hidden -z-10"
         quantity={100}
         ease={80}
         color={"#ffffff"}
@@ -62,7 +62,7 @@ const handleChange = (e) => {
     {showAlert && <Alert type={alertType} text={alertMessage} />}
     <div className="flex flex-col items-center justify-center max-w-md p-5 mx-auto border border-white/10 rounded-2xl bg-primary">
         <div className="flex flex-col items-start w-full gap-5 mb-10">
-        <h2 className="text-heading">Let's Talk</h2>
+        <h2 className="text-heading">Send me an e-mail</h2>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>
         <div className="mb-5">

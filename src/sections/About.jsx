@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import Card from "../components/Card";
 import { FrameWorks } from "../components/FrameWorks";
-import CopyEmailButton from "../components/CopyEmailButton";
 import { EvervaultCard } from "../components/EvervaultCard";
+import QuickContact from "../components/QuickContact";
 const About = () => {
   const grid2Container = useRef();
   return (
@@ -100,16 +100,7 @@ const About = () => {
         </div>
 </div>
         {/* Grid 4 */}
-        <div className="grid-special-color grid-4">
-          <div className="flex flex-col items-center justify-center gap-4 size-full">
-            <p className="text-center headtext">
-              Do you want to start a project together?
-            </p>
-            <CopyEmailButton />
-          </div>
-        </div>
-        {/* Grid 5 */}
-          <div className="grid-default-color grid-5">
+                  <div className="grid-default-color grid-5">
           <div className="z-10 w-[50%]">
             <p className="headText text-2xl">Tech Stack</p>
             <p className="subtext">
@@ -121,6 +112,15 @@ const About = () => {
             </div>
           </div>
           </div>
+        {/* Grid 5 */}
+        <div className="grid-special-color  grid-4">
+          <div className="flex flex-col items-center justify-center gap-4 size-full">
+            <p className="text-center headtext">
+              Do you want to start a project together?
+            </p>
+            <QuickContact />
+          </div>
+        </div>
       </div>
     </section>
   );
