@@ -12,19 +12,19 @@ const QuickContact = () => {
   };
 
   return (
-    <div className="p-4 border rounded-2xl bg-slate-800/40 border-slate-700/50 w-full max-w-400px] hover:border-slate-600/60 transition-all duration-300 backdrop-blur-sm">
-      <h4 className="mb-2 text-base font-semibold text-slate-100">Connect</h4>
+    <div className="p-4 border rounded-2xl bg-slate-800/40 border-slate-700/50 w-full max-w-400px] hover:border-slate-600/60 hover:bg-slate-800/60 transition-all duration-300 backdrop-blur-sm hover:shadow-lg hover:shadow-slate-900/30">
+      <h4 className="mb-2 text-base font-semibold text-slate-100 group-hover:text-white transition-colors duration-300">Connect</h4>
       
       {/* Social icons only - reduced margin-bottom */}
       <div className="flex items-center gap-2 mb-3">
         {/* Email icon */}
         <a 
           href="mailto:premawasthi428@gmail.com"
-          className="p-2 rounded-lg bg-slate-700/40 hover:bg-slate-600/50 transition-all duration-200 group/email hover:scale-105"
+          className="p-2 rounded-lg bg-slate-700/40 hover:bg-slate-600/60 transition-all duration-200 group/email hover:scale-110 hover:shadow-md hover:shadow-slate-700/30"
           title="Email"
         >
           <svg 
-            className="w-4 h-4 text-slate-300 group-hover/email:text-slate-100 transition-colors" 
+            className="w-4 h-4 text-slate-300 group-hover/email:text-white transition-all duration-200" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24" 
@@ -46,12 +46,12 @@ const QuickContact = () => {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-lg bg-slate-700/40 hover:bg-slate-600/50 transition-all duration-200 group/social hover:scale-105"
+            className="p-2 rounded-lg bg-slate-700/40 hover:bg-slate-600/60 transition-all duration-200 group/social hover:scale-110 hover:shadow-md hover:shadow-slate-700/30"
             title={social.name}
           >
             <img 
               src={social.icon} 
-              className="w-4 h-4 opacity-90 group-hover/social:opacity-100 transition-opacity" 
+              className="w-4 h-4 opacity-90 group-hover/social:opacity-100 group-hover/social:scale-110 transition-all duration-200" 
               alt={social.name} 
             />
           </a>
@@ -61,10 +61,10 @@ const QuickContact = () => {
       {/* Compact resume button */}
       <button 
         onClick={handleDownloadResume}
-        className="w-full py-2 rounded-lg bg-slate-700/40 hover:bg-slate-600/50 transition-all duration-200 text-slate-100 text-sm font-medium flex items-center justify-center gap-1.5 group/btn hover:scale-[1.02] active:scale-[0.98] border border-slate-600/40"
+        className="w-full py-2 rounded-lg bg-slate-700/40 hover:bg-slate-600/60 transition-all duration-200 text-slate-100 hover:text-white text-sm font-medium flex items-center justify-center gap-1.5 group/btn hover:scale-[1.02] active:scale-[0.98] border border-slate-600/40 hover:border-slate-500/60 hover:shadow-md hover:shadow-slate-700/20"
       >
         <svg 
-          className="w-4 h-4 transition-transform group-hover/btn:-translate-y-0.5" 
+          className="w-4 h-4 transition-all duration-200 group-hover/btn:-translate-y-0.5 group-hover/btn:text-white" 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24" 
